@@ -69,8 +69,8 @@ $posts = [
     <h1>Blog post</h1>
 
     <!-- Stampare ogni data con i relativi post. -->
-    <?php foreach($posts as $x => $post) {
-            echo "<h2>Date of post {$x}</h2>";
+    <?php foreach($posts as $date => $post) {
+            echo "<h2>Date of post {$date}</h2>";
 
             foreach($post as $post_details) {
                 echo 
