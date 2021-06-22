@@ -1,17 +1,19 @@
 <?php
 //Passare come parametri GET name, mail e age e verificare
-var_dump($_GET['name']);
-var_dump($_GET['email']);
-var_dump($_GET['age']);
+// var_dump($_GET['name']);
+// var_dump($_GET['email']);
+// var_dump($_GET['age']);
 
 //che name sia più lungo di 3 caratteri, 
 //che mail contenga un punto e una chiocciola 
 //che age sia un numero. 
-if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
-    echo $_GET['email'];
-}
 
-//Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+if (strlen($_GET['name']) > 3 && filter_var($_GET['email'], FILTER_VALIDATE_EMAIL) && is_numeric($_GET['age'])) {
+    //Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+    $result = 'Accesso riuscito';
+}else {
+    $result = 'Accesso non eseguito';
+}
 
 ?>
 
@@ -24,6 +26,13 @@ if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 2</title>
+
+    <style>
+        input{
+            display: block;
+            margin: 1rem 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +51,7 @@ if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
     </form>
 
     <div class="result">
-
+        <h2><?php echo $result?></h2>
     </div>
     
 </body>
