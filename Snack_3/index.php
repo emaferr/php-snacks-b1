@@ -3,7 +3,6 @@
 // Creare un array di array. 
 // Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 
 // e come valore un array di post associati a quella data. 
-// Stampare ogni data con i relativi post.
 
 $posts = [
 
@@ -45,6 +44,12 @@ $posts = [
     ],
 ];
 
+var_dump($posts);
+
+foreach ($variable as $key => $value) {
+    # code...
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +59,32 @@ $posts = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 3</title>
+    <style>
+        div{
+            padding: 1rem 0;
+        }
+        span{
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <h1>Blog post</h1>
+
+    <!-- Stampare ogni data con i relativi post. -->
+    <?php foreach($posts as $x => $post) {
+            echo "<h2>Date of post {$x}</h2>";
+
+            foreach($post as $post_details) {
+                echo 
+                "<div>
+                    <span><strong>Title of post: </strong>{$post_details["title"]}</span>
+                    <span><strong>Author of post: </strong>{$post_details["author"]}</span>
+                    <span><strong>Text of post: </strong>{$post_details["text"]}</span>
+                </div>";
+            }
+            echo "<hr>";
+        }?>
 </body>
 </html>
