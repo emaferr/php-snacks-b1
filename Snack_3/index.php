@@ -44,11 +44,7 @@ $posts = [
     ],
 ];
 
-var_dump($posts);
-
-foreach ($variable as $key => $value) {
-    # code...
-}
+// var_dump($posts);
 
 ?>
 
@@ -86,5 +82,7 @@ foreach ($variable as $key => $value) {
             }
             echo "<hr>";
         }?>
+
 </body>
+
 </html>
