@@ -24,11 +24,9 @@ $matches = [
 
 ];
 
-//Stampiamo a schermo tutte le partite con questo schema.
-//Olimpia Milano - Cantù | 55-60 
+// var_dump($matches)
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +34,43 @@ $matches = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <style>
+
+        /* Match style */
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            display: inline;
+        }
+
+    </style>
+
     <title>Snack 1</title>
+
 </head>
+
 <body>
+
+    <h1>Matches first week</h1>
+    <!-- Stampiamo a schermo tutte le partite con questo schema. Olimpia Milano - Cantù | 55-60  -->
+    <?php for ($i=0; $i < count($matches) ; $i++) { 
+        # code...
+        $match = $matches[$i];
+        ?>
+        <!-- match layout -->
+        <ul>
+            <li><?php echo $match['home_team'][0] .' - ' ?></li>
+            <li><?php echo $match['visiting_team'][0]?></li>
+            <li><?php echo ' | ' .$match['home_team'][1] .' - '?></li>
+            <li><?php echo $match['visiting_team'][1]?></li>
+        </ul>
+
+    <?php } ?>
     
 </body>
+
 </html>
