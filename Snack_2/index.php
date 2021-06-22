@@ -7,6 +7,10 @@ var_dump($_GET['age']);
 //che name sia più lungo di 3 caratteri, 
 //che mail contenga un punto e una chiocciola 
 //che age sia un numero. 
+if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
+    echo $_GET['email'];
+}
+
 //Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 
 ?>
