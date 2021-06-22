@@ -7,7 +7,6 @@
 //che name sia più lungo di 3 caratteri, 
 //che mail contenga un punto e una chiocciola 
 //che age sia un numero. 
-
 if (strlen($_GET['name']) > 3 && filter_var($_GET['email'], FILTER_VALIDATE_EMAIL) && is_numeric($_GET['age'])) {
     //Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
     $result = 'Accesso riuscito';
