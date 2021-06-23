@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<form action="pagina_due.php">
+<form action="./pagina_due.php">
         <label for="name">NAME</label>
         <input type="text" name="name" id="name">
 
