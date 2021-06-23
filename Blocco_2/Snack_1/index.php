@@ -32,13 +32,15 @@ $ads = [
 
 ];
 
-$ads_selezionato =[];
+$ads_selezionato = array();
 foreach ($ads as $attivo) {
     if ($attivo['is_active']) {
         //var_dump($value);
         $ads_selezionato[] = $attivo;
     }
 }
+
+var_dump($ads_selezionato);
 
 $numero_random = rand(0, count($ads_selezionato));
 
